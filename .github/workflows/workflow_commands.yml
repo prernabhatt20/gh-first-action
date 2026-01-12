@@ -1,16 +1,15 @@
-name: Workflows Commands
-
-# Controls when the workflow will run
+name: Workflow Commands Demo
 on: [push]
 jobs:
-  testing-workflow-commands:
+  demo-workflow-commands:
     runs-on: ubuntu-latest
     steps:
-      -name: Mask a Sensitive value
-       run: |
-         echo "::add-mask::Mysecret123"
-         echo "Mask value added"
-      -name: Echo masked value
-       run: |
-         echo "Mysecret123"
-         
+      # Masking sensitive values
+      - name: Mask a Sensitive Value
+        run: |
+          echo "::add-mask::MySecret123"
+          echo "Masked value added"
+
+      - name: Echo Masked Value
+        run: |
+          echo "MySecret123"
