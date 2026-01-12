@@ -1,13 +1,11 @@
 name: MUlti-job Workflow
-
-
 on: [push]
 jobs:
   job-one:
     runs-on: ubuntu-latest
     steps:
       - name: Step 1 in job one
-        run: echo"Job one completed"
+        run: echo "Job one completed"
   job-two:
     needs: job-one
     runs-on: ubuntu-latest
