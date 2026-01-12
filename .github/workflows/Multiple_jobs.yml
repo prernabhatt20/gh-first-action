@@ -1,0 +1,19 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Multi-job Workflow
+
+on: [push]
+
+jobs:
+  job_one:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1 in job one
+        run: echo "Executing job one"
+  job_two:
+   runs-on: ubuntu-latest
+   steps:
+     - name: Step 1 in jon two
+       run: echo "Executing jon two"
+
+      
