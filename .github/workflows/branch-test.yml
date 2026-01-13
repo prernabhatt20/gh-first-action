@@ -1,0 +1,28 @@
+name: Branch Variables
+on:
+  push:
+    branches:
+      - main
+      - test
+      - dev
+jobs:
+  practice:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show branch name
+        run: |
+           echo "Current branch is: $GITHUB_REF_NAME"
+      - name: Set variable based on branch
+        run: |
+          if [ "$GITHUB_REF_NAME" = "main" ]; then
+            echo "MY_ENV=PRODUCTION" >> $GITHUB_ENV
+          elif [ "$GITHUB_REF_NAME" = "dev" ]; then
+            echo "MY_ENV=DEVELOPMENT" >> $GITHUB_ENV
+          else
+            echo "MY_ENV=TEST" >> $GITHUB_ENV
+          fi
+
+
+      - name: Use the variable
+        run: |
+          echo "Environment is: $MY_ENV"
