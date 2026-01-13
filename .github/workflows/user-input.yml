@@ -1,0 +1,16 @@
+name: Workflow with inputs
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Enter your name"
+        required: true
+        default: "user"
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Print inputs
+        run: echo "name:${{ github.event.inputs.name }}"
+  
+          
