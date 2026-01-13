@@ -22,6 +22,7 @@ jobs:
             echo "MY_ENV=TEST" >> $GITHUB_ENV
           fi
 
+
       - name: Use the variable
         run: |
           echo "Environment is: $MY_ENV"
