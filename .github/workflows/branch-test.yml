@@ -16,6 +16,8 @@ jobs:
         run: |
           if [ "$GITHUB_REF_NAME" = "main" ]; then
             echo "MY_ENV=PRODUCTION" >> $GITHUB_ENV
+          elif [ "$GITHUB_REF_NAME" = "dev" ]; then
+            echo "MY_ENV=DEVELOPMENT" >> $GITHUB_ENV
           else
             echo "MY_ENV=TEST" >> $GITHUB_ENV
           fi
