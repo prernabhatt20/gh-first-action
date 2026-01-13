@@ -1,0 +1,9 @@
+on: workflow_dispatch
+jobs:
+  test:
+    runs-on: self-hosted
+    steps:
+      - run: |
+          echo "This is running on my server"
+          hostname
+          whoami
